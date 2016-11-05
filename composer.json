@@ -1,5 +1,5 @@
 {
-  "name": "AppVerk/CoreBundle",
+  "name": "app-verk/core-bundle",
   "description": "AppVerk Cube CMF CoreBundle",
   "type": "symfony-bundle",
   "authors": [

@@ -1,0 +1,8 @@
+services:
+    twig.extension.actions:
+        class: Cube\CoreBundle\Twig\NullExtension
+
+    cube.core.twig.cube_raw_extension:
+        class: Cube\CoreBundle\Twig\CubeRawExtension
+        tags:
+            - { name: twig.extension }

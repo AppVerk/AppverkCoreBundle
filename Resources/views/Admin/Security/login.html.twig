@@ -1,0 +1,44 @@
+{% extends 'CubeCoreBundle:Admin/Security:base.html.twig' %}
+
+{% block sonata_wrapper %}
+    <div class="connection">
+        <div class="logo-wrapper">
+            <img src="{{ asset('bundles/cubecore/img/login-logo.png') }}" />
+        </div>
+        <div class="form-wrapper">
+            <form action="{{ path("sonata_user_admin_security_check") }}" method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error|trim('.')|trans({}, 'FOSUserBundle') }}</div>
+                {% endif %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="control-group">
+                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+
+                    <div class="controls">
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" class="big sonata-medium"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                    <div class="controls">
+                        <input type="password" id="password" name="_password" class="big sonata-medium" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="remember_me">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-primary btn-block" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <a href="http://appverk.com" target="_blank">
+            <img src="{{ asset('bundles/cubecore/img/appverk.png') }}" />
+        </a>
+    </footer>
+{% endblock sonata_wrapper %}

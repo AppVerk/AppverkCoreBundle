@@ -1,0 +1,60 @@
+services:
+    cube.core_user_data_form_type:
+        class: Cube\CoreBundle\Form\Type\UserDataType
+        tags:
+            - { name: form.type, alias: user_data }
+
+    cube.core_user_data_form:
+        factory: ['@form.factory', create]
+        class: Symfony\Component\Form\Form
+        arguments: ['@cube.core_user_data_form_type', null, []]
+
+    cube.core_user_data_form_handler:
+        class: Cube\CoreBundle\Form\Handler\UserDataHandler
+        scope: request
+        arguments: ['@doctrine.orm.entity_manager']
+        calls:
+            - [ setForm, ['@cube.core_user_data_form'] ]
+            - [ setRequest, ['@request_stack'] ]
+
+    cube.core_change_password_form_type:
+        class: Cube\CoreBundle\Form\Type\ChangePasswordType
+        tags:
+            - { name: form.type, alias: user_change_password }
+
+    cube.core_change_password_form:
+        factory: ['@form.factory', create]
+        class: Symfony\Component\Form\Form
+        arguments: ['@cube.core_change_password_form_type', null, []]
+
+    cube.core_change_password_form_handler:
+        class: Cube\CoreBundle\Form\Handler\ChangePasswordFormHandler
+        scope: request
+        arguments: ['@fos_user.user_manager']
+        calls:
+            - [ setForm, ['@cube.core_change_password_form'] ]
+            - [ setRequest, ['@request_stack'] ]
+
+    cube.core_register_form_type:
+        class: Cube\CoreBundle\Form\Type\RegisterType
+        tags:
+            - { name: form.type, alias: user_register }
+
+    cube.core_register_form:
+        factory: ['@form.factory', create]
+        class: Symfony\Component\Form\Form
+        arguments: ['@cube.core_register_form_type', null, []]
+
+    cube.core_register_form_handler:
+        class: Cube\CoreBundle\Form\Handler\RegisterFormHandler
+        scope: request
+        arguments: ['@fos_user.user_manager', '@fos_user.mailer', '@fos_user.util.token_generator']
+        calls:
+            - [ setForm, ['@cube.core_register_form'] ]
+            - [ setRequest, ['@request_stack'] ]
+
+    app.media_form_type:
+        class: Cube\CoreBundle\Form\Type\MediaFormType
+        arguments: ['@sonata.media.pool', '%sonata.media.media.class%']
+        tags:
+            - { name: form.type, alias: media }

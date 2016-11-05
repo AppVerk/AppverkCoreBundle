@@ -1,0 +1,26 @@
+parameters:
+    sonata.classification.manager.category.class: Cube\CoreBundle\Entity\CategoryManager
+
+services:
+    cube.core.block.login:
+        class: Cube\CoreBundle\Block\LoginBlock
+        tags:
+            - { name: sonata.block }
+        arguments: ['cube.core.block.login', '@templating', '@security.csrf.token_manager', '@request_stack']
+        calls:
+            - [ setTemplate, [ '%cube_core.views.block_login%' ] ]
+
+    cube.core.block.register:
+        class: Cube\CoreBundle\Block\RegisterBlock
+        tags:
+            - { name: sonata.block }
+        arguments: ['cube.core.block.register', '@templating', '@security.csrf.token_manager', '@request_stack']
+        calls:
+            - [ setTemplate, [ '%cube_core.views.block_register%' ] ]
+            - [ setContainer, [ '@service_container' ] ]
+
+    cube.admin.block.user:
+        class: Cube\CoreBundle\Block\UserBlock
+        tags:
+            - { name: sonata.block }
+        arguments: ["cube.admin.block.user", '@templating', '@doctrine.orm.entity_manager']

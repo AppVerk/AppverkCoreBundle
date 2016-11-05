@@ -1,0 +1,18 @@
+services:
+    sonata.user.admin.user:
+        class: "%sonata.user.admin.user.class%"
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Ustawienia", label: "Użytkownicy", label_catalogue: "SonataUserBundle", label_translator_strategy: "sonata.admin.label.strategy.underscore", icon: '<i class="fa fa-cog" aria-hidden="true"></i>' }
+        arguments: [null, '%sonata.user.admin.user.entity%', '%sonata.user.admin.user.controller%']
+        calls:
+            - [ setTranslationDomain, ['%sonata.user.admin.user.translation_domain%'] ]
+            - [ setTokenStorage, ['@security.token_storage'] ]
+
+
+    sonata.user.admin.group:
+        class: "%sonata.user.admin.group.class%"
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Ustawienia", label: "Grupy"  }
+        arguments: [null, '%sonata.user.admin.group.entity%', '%sonata.user.admin.group.controller%']
+        calls:
+            - [ setTranslationDomain, ['%sonata.user.admin.user.translation_domain%'] ]

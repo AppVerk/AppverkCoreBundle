@@ -1,0 +1,62 @@
+<form action="{{ path("cube_core_user_profile") }}" method="post">
+
+    <label for="firstname">firstname:</label>
+    <input type="text" id="firstname" name="user_data[firstname]" value="{{ user.firstname }}" />
+
+    <label for="lastname">lastname:</label>
+    <input type="text" id="lastname" name="user_data[lastname]" value="{{ user.lastname }}" />
+    <br />
+
+    <label for="about">about:</label>
+    <textarea id="about" name="user_data[about]">{{ user.about }}</textarea>
+    <br />
+
+    <label for="state">state:</label>
+    <select id="state" name="user_data[state]">
+        <option value="win">Wygrałem</option>
+        <option value="fight">Walcze</option>
+        <option value="support">Wspieram</option>
+    </select>
+
+    <label for="cancer_type">cancer type:</label>
+    <select id="cancer_type" name="user_data[cancer_type]">
+        <option value="xxx">xxx</option>
+        <option value="yyy">yyy</option>
+    </select>
+    <br />
+
+    <label for="profession">profession:</label>
+    <input type="text" id="profession" name="user_data[profession]" value="{{ user.profession }}" />
+    <br />
+
+    <label for="skype">skype:</label>
+    <input type="text" id="skype" name="user_data[skype]" value="{{ user.skype }}" />
+    <br />
+
+    <label for="gadu_gadu">Gadu-gadu:</label>
+    <input type="text" id="gadu_gadu" name="user_data[gadu_gadu]" value="{{ user.gaduGadu }}" />
+    <br />
+
+    <label for="website">www:</label>
+    <input type="text" id="website" name="user_data[website]" value="{{ user.website }}" />
+    <br />
+
+    <label for="video">video:</label>
+    <input type="text" id="video" name="user_data[video]" value="{{ user.video }}" />
+    <br />
+
+    <button type="submit">Save changes</button>
+</form>
+
+<form action="{{ path("cube_core_user_changepassword") }}" method="post">
+    <label for="current_password">current password:</label>
+    <input type="password" id="current_password" name="user_change_password[current_password]" />
+    <br />
+    <label for="firstname">password:</label>
+    <input type="password" id="password" name="user_change_password[new][first]" />
+    <br />
+    <label for="repeated">repeat password:</label>
+    <input type="password" id="repeated" name="user_change_password[new][second]" />
+    <br />
+    <button type="submit">Save changes</button>
+</form>

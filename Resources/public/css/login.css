@@ -1,0 +1,70 @@
+.logo-wrapper{
+    text-align: center;
+    margin:20px 0;
+}
+div.connection{
+    box-shadow: 0 0 0;
+    border-width: 0;
+    background: transparent;
+    margin: -130px 0 0 -230px;
+    top: 20%;
+}
+div.connection .form-actions{
+    padding-right: 20px;
+}
+select.sonata-medium, textarea.sonata-medium, input.sonata-medium{
+    width: 100%;
+}
+.control-group{
+    margin-bottom: 5px;
+}
+.btn.btn-primary{
+    background-color: #bc1f46;
+    border-color: #bc1f46;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0;
+}
+.btn.btn-primary:hover, .btn.btn-primary:active{
+    background-color: #bc1f46;
+    border-color: #bc1f46;
+}
+div.connection div input.big{
+    font-size: 18px;
+    padding:10px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: rgba(188, 31, 70, 0.8);
+    box-shadow: 0 1px 1px rgba(188, 31, 70, 0.075) inset, 0 0 8px rgba(188, 31, 70, 0.6);
+    outline: 0 none;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding:50px 0;
+    background-color:transparent;
+}
+body{
+    margin-bottom:0;
+}
+.wrapper{
+    position: static;
+}

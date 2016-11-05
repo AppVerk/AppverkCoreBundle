@@ -1,0 +1,34 @@
+{% extends 'SonataAdminBundle:Form:form_admin_fields.html.twig' %}
+
+{% block sonata_admin_orm_one_to_one_widget %}
+    {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_one.html.twig' %}
+{% endblock %}
+
+{% block sonata_admin_orm_many_to_many_widget %}
+    {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig' %}
+{% endblock %}
+
+{% block sonata_admin_orm_many_to_one_widget %}
+    {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_one.html.twig' %}
+{% endblock %}
+
+{% block sonata_admin_orm_one_to_many_widget %}
+    {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig' %}
+{% endblock %}
+
+{% block sonata_type_model_widget %}
+    {% include 'CubeCoreBundle:sonata/Form/orm/formAdminFields:sonata_type_model_widget.html.twig' %}
+{% endblock %}
+
+{% block sonata_type_model_list_widget %}
+    {% include 'CubeCoreBundle:sonata/Form/orm/formAdminFields:form_admin_sonata_type_model_list_widget.html.twig' %}
+{% endblock %}
+
+
+{% block sonata_type_admin_widget %}
+    {% include 'CubeCoreBundle:sonata/Form/orm/formAdminFields:sonata_type_admin_widget.html.twig' %}
+{% endblock %}
+
+{% block sonata_type_collection_widget %}
+    {% include 'CubeCoreBundle:sonata/Form/orm/formAdminFields:sonata_type_collection_widget.html.twig' %}
+{% endblock %}

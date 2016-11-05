@@ -1,0 +1,30 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block meta_tags %}
+    {{ parent() }}
+    <link rel="icon" type="image/png" href="{{ asset('bundles/cubecore/img/favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ asset('bundles/cubecore/img/favicon-16x16.png') }}" sizes="16x16" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bundles/cuberedactor/redactor.min.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('bundles/cuberedactor/sonata.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('bundles/cubecore/css/custom-sonata.css') }}" type="text/css" media="screen" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/cuberedactor/redactor.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/cuberedactor/lang/pl.js') }}" ></script>
+    <script>
+        var redactorSettings = {{ redactor_settings|json_encode|cubeRaw }};
+    </script>
+    <script type="text/javascript" src="{{ asset('bundles/cuberedactor/symfony-script.js') }}" ></script>
+{% endblock %}
+
+{% block side_bar_after_nav %}
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px">
+    </p>
+{% endblock %}

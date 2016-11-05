@@ -1,0 +1,20 @@
+.logo span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.logo img{
+    padding:4px 0 9px 5px;
+    margin:5px;
+    max-width: 35px;
+}
+.logo img + span {
+    width: 76px;
+    position: relative;
+    top: -2px;
+}
+.alert{
+    border-radius: 0;
+    padding: 9px;
+}

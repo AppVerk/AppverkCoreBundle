@@ -1,0 +1,3 @@
+user:
+    resource: "@CubeCoreBundle/Controller/"
+    type:     annotation

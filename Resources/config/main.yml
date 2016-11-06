@@ -156,13 +156,6 @@ sonata_user:
             - { route: 'sonata_user_profile_show', label: 'sonata_profile_title', domain: 'SonataUserBundle'}
             - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
             - { route: 'sonata_user_change_password', label: 'change_password', domain: 'SonataUserBundle'}
-        form:
-            type: sonata_user_profile
-            handler: sonata.user.profile.form.handler.default
-            name: sonata_user_profile_form
-            validation_groups:
-                - Profile
-                - Default
 
 sonata_block:
     default_contexts: [cms]

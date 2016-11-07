@@ -48,10 +48,5 @@
     "psr-4": {
       "Cube\\CoreBundle\\": ""
     }
-  },
-  "target-dir": "Cube/CoreBundle",
-  "repositories": [
-    {
-    }
-  ]
+  }
 }

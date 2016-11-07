@@ -45,18 +45,13 @@
 
   },
   "autoload": {
-    "psr-0": {
-      "Cube\\CoreBundle": ""
+    "psr-4": {
+      "Cube\\CoreBundle\\": ""
     }
   },
   "target-dir": "Cube/CoreBundle",
   "repositories": [
     {
     }
-  ],
-  "extra": {
-    "branch-alias": {
-      "1.0.0": "1.0.0 stable version"
-    }
-  }
+  ]
 }

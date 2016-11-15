@@ -1,6 +1,3 @@
-parameters:
-    user_class: Cube\CoreBundle\Entity\User
-
 doctrine:
     dbal:
         types:
@@ -24,9 +21,9 @@ stof_doctrine_extensions:
 fos_user:
     db_driver:      orm
     firewall_name:  main
-    user_class:     '%user_class%'
+    user_class:     '%cube_core_entity_user%'
     group:
-        group_class:   Cube\CoreBundle\Entity\Group
+        group_class:   '%cube_core_entity_group%'
     from_email:
         address: "%mailer_user%"
         sender_name: Cube
@@ -83,7 +80,7 @@ sonata_classification:
         category:     Cube\CoreBundle\Entity\Category
         collection:   Cube\CoreBundle\Entity\Collection
         context:      Cube\CoreBundle\Entity\Context
-        media:        Cube\CoreBundle\Entity\Media
+        media:        '%cube_core_entity_media%'
     admin:
         tag:
             class:        Sonata\ClassificationBundle\Admin\TagAdmin
@@ -104,7 +101,7 @@ sonata_classification:
 
 sonata_media:
     class:
-        media: Cube\CoreBundle\Entity\Media
+        media: '%cube_core_entity_media%'
         gallery: Cube\CoreBundle\Entity\Gallery
         gallery_has_media: Cube\CoreBundle\Entity\GalleryHasMedia
         category: Cube\CoreBundle\Entity\Category
@@ -145,8 +142,8 @@ sonata_media:
 
 sonata_user:
     class:
-        user: '%user_class%'
-        group: Cube\CoreBundle\Entity\Group
+        user: '%cube_core_entity_user%'
+        group: '%cube_core_entity_group%'
     manager_type: orm
 
 sonata_block:

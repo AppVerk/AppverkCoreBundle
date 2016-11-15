@@ -6,10 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Sonata\MediaBundle\Entity\BaseMedia;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="cube_core_media")
+ * @ORM\MappedSuperclass()
  */
-class Media extends BaseMedia
+abstract class Media extends BaseMedia
 {
     /**
      * @var integer
@@ -19,7 +18,6 @@ class Media extends BaseMedia
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
-
 
     protected $category;
 

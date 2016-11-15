@@ -18,9 +18,3 @@ services:
         calls:
             - [ setTemplate, [ '%cube_core.views.block_register%' ] ]
             - [ setContainer, [ '@service_container' ] ]
-
-    cube.admin.block.user:
-        class: Cube\CoreBundle\Block\UserBlock
-        tags:
-            - { name: sonata.block }
-        arguments: ["cube.admin.block.user", '@templating', '@doctrine.orm.entity_manager']

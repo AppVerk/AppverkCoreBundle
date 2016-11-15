@@ -11,35 +11,17 @@ use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints as Constraint;
 
+
 /**
- * @ORM\Entity
- * @ORM\Table(name="cube_core_user")
+ * @ORM\MappedSuperclass()
  */
-class User extends BaseUser
+abstract class User extends BaseUser
 {
     /**
      * Hook SoftDeleteable behavior
      * updates deletedAt field
      */
     use SoftDeleteableEntity;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    protected $id;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Group")
-     * @ORM\JoinTable(name="cube_core_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
 
     /**
      * @var string
@@ -59,14 +41,6 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->groups = new ArrayCollection();
-    }
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**

@@ -1,3 +1,7 @@
+# AppverkCoreBundle
+Starting bundle for appverk projects, based on SonataAdminBundle.
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/27c97640-1144-43fc-9bce-314e0e4980b6/big.png)](https://insight.sensiolabs.com/projects/27c97640-1144-43fc-9bce-314e0e4980b6)
 # Installation
 
 Require the bundle with composer:

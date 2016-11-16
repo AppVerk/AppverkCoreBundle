@@ -4,7 +4,6 @@ namespace Cube\CoreBundle\Controller;
 
 use Cube\CoreBundle\Form\Model\Register;
 use FOS\UserBundle\Model\UserInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

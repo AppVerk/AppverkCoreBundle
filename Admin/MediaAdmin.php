@@ -2,30 +2,38 @@
 
 namespace Cube\CoreBundle\Admin;
 
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\MediaBundle\Admin\ORM\MediaAdmin as BaseMediaAdmin;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\MediaBundle\Admin\ORM\MediaAdmin as Admin;
+use Sonata\MediaBundle\Form\DataTransformer\ProviderDataTransformer;
 
-class MediaAdmin extends BaseMediaAdmin
+class MediaAdmin extends Admin
 {
     /**
-     * @var TokenStorageInterface
+     * {@inheritdoc}
      */
-    private $tokenStorage;
+    protected function configureFormFields( FormMapper $formMapper ) {
+        $media = $this->getSubject();
 
-    protected function configureRoutes(RouteCollection $collection)
-    {
-        $collection
-            ->remove('export');
+        if ( ! $media ) {
+            $media = $this->getNewInstance();
+        }
+
+        if ( ! $media || ! $media->getProviderName() ) {
+            return;
+        }
+
+        $formMapper->add( 'providerName', 'hidden' );
+
+        $formMapper->getFormBuilder()->addModelTransformer( new ProviderDataTransformer( $this->pool, $this->getClass() ), true );
+
+        $provider = $this->pool->getProvider( $media->getProviderName() );
+
+        if ( $media->getId() ) {
+            $provider->buildEditForm( $formMapper );
+        } else {
+            $provider->buildCreateForm( $formMapper );
+        }
+
     }
 
-    protected function getTokenStorage()
-    {
-        return $this->tokenStorage;
-    }
-
-    public function setTokenStorage(TokenStorageInterface $tokenStorage)
-    {
-        $this->tokenStorage = $tokenStorage;
-    }
 }

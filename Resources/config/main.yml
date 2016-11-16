@@ -1,3 +1,6 @@
+parameters:
+    sonata.media.admin.media.class: Cube\CoreBundle\Admin\MediaAdmin
+
 doctrine:
     dbal:
         types:

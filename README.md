@@ -10,11 +10,11 @@ Require the bundle with composer:
 ...
 "require": {
         ...
-        "app-verk/core-bundle": "dev-master"
+        "app-verk/core-bundle": "^1.0"
     },
 "repositories": [
         {
-            "url": "https://github.com/art4webs/AppverkCoreBundle.git",
+            "url": "https://github.com/AppVerk/CoreBundle.git",
             "type": "vcs"
         }
     ],

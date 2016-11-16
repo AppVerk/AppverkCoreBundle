@@ -1,0 +1,14 @@
+cube_core_admin_security_login:
+    path: /admin/login
+    defaults: { _controller: 'CubeCoreBundle:Admin/AdminSecurity:login' }
+    methods: [GET]
+
+sonata_user_admin_security_check:
+    path: /admin/login_check
+    defaults: { _controller: 'CubeCoreBundle:Admin/AdminSecurity:check' }
+    methods: [POST]
+
+sonata_user_admin_security_logout:
+    path: /admin/logout
+    defaults: { _controller: 'CubeCoreBundle:Admin/AdminSecurity:logout' }
+    methods: [GET]

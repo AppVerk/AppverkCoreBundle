@@ -12,5 +12,13 @@ media:
     prefix: /media
 
 user:
-    resource: "@CubeCoreBundle/Controller/"
-    type:     annotation
+    resource: "@CubeCoreBundle/Resources/config/routing/user.yml"
+
+admin_security:
+    resource: "@CubeCoreBundle/Resources/config/routing/admin/security.yml"
+
+security:
+    resource: "@CubeCoreBundle/Resources/config/routing/security.yml"
+
+registration:
+    resource: "@CubeCoreBundle/Resources/config/routing/user.yml"

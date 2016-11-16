@@ -1,0 +1,14 @@
+cube_core_security_login:
+    path: /security/login
+    defaults: { _controller: 'CubeCoreBundle:Security:login' }
+    methods: [GET]
+
+cube_core_security_check:
+    path: /security/check-login
+    defaults: { _controller: 'CubeCoreBundle:Security:check' }
+    methods: [POST]
+
+cube_core_security_logout:
+    path: /security/logout
+    defaults: { _controller: 'CubeCoreBundle:Security:logout' }
+    methods: [GET]

@@ -1,0 +1,9 @@
+cube_core_registration_register:
+    path: /register
+    defaults: { _controller: 'CubeCoreBundle:Registration:register' }
+    methods: [POST]
+
+fos_user_registration_confirm:
+    path: /register/confirm
+    defaults: { _controller: 'CubeCoreBundle:Registration:confirm' }
+    methods: [GET]

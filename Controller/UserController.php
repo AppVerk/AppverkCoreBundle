@@ -3,17 +3,12 @@
 namespace Cube\CoreBundle\Controller;
 
 use FOS\UserBundle\Form\Model\ChangePassword;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * @Route("/user")
- */
 class UserController extends Controller
 {
     /**
-     * @Route("/profile", methods={"GET", "POST"})
      * @Security("is_granted('ROLE_USER')")
      */
     public function profileAction()
@@ -32,7 +27,6 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/change-password", methods={"POST"})
      * @Security("is_granted('ROLE_USER')")
      */
     public function changePasswordAction()

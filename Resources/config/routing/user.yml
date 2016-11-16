@@ -1,0 +1,9 @@
+cube_core_user_profile:
+    path: /login
+    defaults: { _controller: 'CubeCoreBundle:User:profile' }
+    methods: [GET, POST]
+
+cube_core_user_change_password:
+    path: /login
+    defaults: { _controller: 'CubeCoreBundle:User:changePassword' }
+    methods: [POST]

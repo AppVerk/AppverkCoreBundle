@@ -2,7 +2,6 @@
 
 namespace Cube\CoreBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -10,16 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Security;
 
-/**
- * @Route("/security")
- */
 class SecurityController implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    /**
-     * @Route("/login", methods={"GET"})
-     */
     public function loginAction()
     {
         $request = $this->container->get('request');
@@ -49,17 +42,11 @@ class SecurityController implements ContainerAwareInterface
         ]);
     }
 
-    /**
-     * @Route("/check-login", methods={"POST"})
-     */
     public function checkAction()
     {
         return new RedirectResponse('/');
     }
 
-    /**
-     * @Route("/logout", methods={"GET"})
-     */
     public function logoutAction()
     {
         return new Response('', Response::HTTP_NO_CONTENT);

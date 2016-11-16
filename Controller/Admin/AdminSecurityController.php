@@ -2,20 +2,13 @@
 
 namespace Cube\CoreBundle\Controller\Admin;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Security;
 
-/**
- * @Route("/admin")
- */
 class AdminSecurityController extends Controller
 {
-    /**
-     * @Route("/login", methods={"GET"})
-     */
     public function loginAction()
     {
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
@@ -63,17 +56,11 @@ class AdminSecurityController extends Controller
             ));
     }
 
-    /**
-     * @Route("/login_check", name="sonata_user_admin_security_check", methods={"POST"})
-     */
     public function checkAction()
     {
         return $this->redirectToRoute('cube_core_admin_adminsecurity_login');
     }
 
-    /**
-     * @Route("/logout", name="sonata_user_admin_security_logout", methods={"GET"})
-     */
     public function logoutAction()
     {
         return $this->redirectToRoute('cube_core_admin_adminsecurity_login');

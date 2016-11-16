@@ -12,14 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
 
-/**
- * @Route("/register")
- */
 class RegistrationController extends Controller
 {
-    /**
-     * @Route("/", methods={"POST"})
-     */
     public function registerAction()
     {
         $formHandler = $this->get('cube.core_register_form_handler');
@@ -31,9 +25,6 @@ class RegistrationController extends Controller
         return new RedirectResponse('/#modal-register');
     }
 
-    /**
-     * @Route("confirm", methods={"GET"}, name="fos_user_registration_confirm")
-     */
     public function confirmAction(Request $request)
     {
         $token = $request->query->get('token');

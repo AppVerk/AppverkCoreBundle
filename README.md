@@ -170,6 +170,43 @@ class Category extends BaseCategory
 
 ```
 
+```
+<?php
+// AppBundle/Entity/Tag.php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Cube\CoreBundle\Entity\Tag as BaseTag;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="cube_core_tag")
+ */
+class Tag extends BaseTag
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * Get id
+     *
+     * @return int $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+
+```
+
 # Configuration
 
 Add new file to your config directory: cube_parameters.yml
@@ -179,6 +216,8 @@ parameters:
     cube_core_entity_user: AppBundle\Entity\User
     cube_core_entity_group: AppBundle\Entity\Group
     cube_core_entity_media: AppBundle\Entity\Media
+    cube_core_entity_category: AppBundle\Entity\Category
+    cube_core_entity_tag: AppBundle\Entity\Tag
 ```
 
 Add import files to main config file:

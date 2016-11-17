@@ -79,8 +79,8 @@ doctrine_migrations:
 
 sonata_classification:
     class:
-        tag:          Cube\CoreBundle\Entity\Tag
-        category:     Cube\CoreBundle\Entity\Category
+        tag:          '%cube_core_entity_tag%'
+        category:     '%cube_core_entity_category%'
         collection:   Cube\CoreBundle\Entity\Collection
         context:      Cube\CoreBundle\Entity\Context
         media:        '%cube_core_entity_media%'
@@ -107,7 +107,7 @@ sonata_media:
         media: '%cube_core_entity_media%'
         gallery: Cube\CoreBundle\Entity\Gallery
         gallery_has_media: Cube\CoreBundle\Entity\GalleryHasMedia
-        category: Cube\CoreBundle\Entity\Category
+        category: '%cube_core_entity_category%'
     default_context: default
     db_driver: doctrine_orm
     contexts:

@@ -10,14 +10,6 @@ use Sonata\MediaBundle\Entity\BaseMedia;
  */
 abstract class Media extends BaseMedia
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    protected $id;
 
     protected $category;
 

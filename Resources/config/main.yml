@@ -38,6 +38,7 @@ sonata_admin:
         layout: 'CubeCoreBundle:sonata:admin_layout.html.twig'
     show_mosaic_button: false
     dashboard:
+        blocks:
         groups:
             sonata.admin.group.content:
                 label: admin.dashboard.cms

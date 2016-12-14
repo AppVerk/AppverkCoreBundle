@@ -71,9 +71,6 @@ sonata_block:
         sonata.admin.block.search_result:
             contexts: [admin]
 
-doctrine_migrations:
-    table_name: migration_versions
-
 sonata_classification:
     class:
         tag:          '%cube_core_entity_tag%'

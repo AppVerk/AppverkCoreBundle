@@ -89,6 +89,10 @@ class UserAdmin extends BaseUserAdmin
         }
         $formMapper->end();
     }
+    public function preUpdate($user)
+    {
+
+    }
     public function setTokenStorage(TokenStorageInterface $tokenStorage)
     {
         $this->tokenStorage = $tokenStorage;
